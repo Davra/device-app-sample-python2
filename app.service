@@ -1,0 +1,13 @@
+[Unit]
+Description=[[applicationName]]
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/python2.7 [[installationDir]]/app.py
+Type=simple
+KillMode=process
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

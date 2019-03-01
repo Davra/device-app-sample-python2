@@ -1,0 +1,4 @@
+# Set the name for this application. No spaces, only aphanumeric.
+applicationName=sampleAppPython2
+# Set the version for this application. No spaces, only aphanumeric and underscore.
+applicationVersion=1_1
