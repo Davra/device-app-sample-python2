@@ -4,6 +4,7 @@
 ### Copy this sample code, edit and assemble artifact.
 - Clone this directory of files to a local directory of your own.
 - Edit config.txt to assign a unique applicationName.
+- Get the very latest SDK at https://raw.githubusercontent.com/Davra/device-agent-python2/master/davra-agent/davra_sdk.py
 - Edit app.py to perform your application code as required.
 - Edit requirements.txt to list the python libraries you require.
 - Run ./build.sh to assemble the .tar.gz artifact.
