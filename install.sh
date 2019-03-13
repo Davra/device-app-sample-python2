@@ -26,6 +26,7 @@ sudo chmod 644  /lib/systemd/system/${applicationName}.service
 sudo systemctl daemon-reload
 sudo systemctl enable "${applicationName}.service"
 sudo systemctl start "${applicationName}.service"
+sudo systemctl restart "${applicationName}.service"
 
 # Finished
 echo "Finished installation procedure for Application ${applicationName}"

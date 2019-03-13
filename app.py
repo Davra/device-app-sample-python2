@@ -71,7 +71,7 @@ if __name__ == "__main__":
     # Demonstration of how to listen to any communication on the device (the agent or other apps)
     davraSdk.listenToAllMessagesFromAgent(onAnyMessageReceived)
 
-    # Demonstration of how to send a miscellaneous meesage to the agent
+    # Demonstration of how to send a miscellaneous message to the agent
     davraSdk.sendMessageFromAppToAgent({"message": "test from app"})
 
     # Main loop to run forever. 
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         # Only every n seconds
         if(countMainLoop % 60 == 0):
             davraSdk.log('Application running: ' + appConfig["applicationName"])
-        if(countMainLoop % 10 == 0):
+        if(countMainLoop % 30 == 0):
 			# Demonstration of sending a simple metric reading to the server
             davraSdk.sendMetricValue("counter", countMainLoop)
         countMainLoop += 1
