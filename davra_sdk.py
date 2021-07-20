@@ -46,7 +46,7 @@ def loadAppConfiguration(davraAppConfigFile = "config.txt"):
 
 
 def getMilliSecondsSinceEpoch():
-    return int((datetime.now() - datetime(1970,1,1)).total_seconds() * 1000)
+    return int((datetime.utcnow() - datetime(1970,1,1)).total_seconds() * 1000)
 
 
 # Does the supplied string contain valid json
@@ -173,6 +173,16 @@ def sendMetricValue(metricName, metricValue):
     sendIotData(dataToSend)
 
 
+# Send multiple metric items
+def sendMultiMetricValues(metrics):
+    dataToSend = []
+    for metric in metrics:
+        for metricName, metricValue in metric.items():
+            dataToSend.append({"name": metricName, "value": metricValue, "msg_type": "datum"})
+
+    sendIotData(dataToSend)
+    
+
 # Send a datum to agent to forward to /api/v1/iotdata
 # For a metric:
 # Supply dataToSend like: {"name": "cpu", "value": 12, "msg_type": "datum", "tags": {"os": "linux"}}
@@ -249,4 +259,3 @@ def runCommandWithTimeout(command, timeout):
             if e.errno != 3:
                 raise
     return (-1, None)
-
